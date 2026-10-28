@@ -14,18 +14,38 @@ export const useFetchReleaseVersions = ({
     const fetchReleaseVersions = async () => {
       setIsLoading(true)
       setIsDone(false)
+      try {
+        const response = await fetch(getReleasesFileURL({ packageName }), {
+          signal: AbortSignal.timeout(3000),
+        })
+        const releaseVersions = (await response.text())
+          .split('\n')
+          .filter(Boolean)
+        setReleaseVersions(releaseVersions)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.log(error?.name)
+        }
+      } finally {
+        setIsLoading(false)
+        setIsDone(true)
+      }
+      if (releaseVersions.length) return
+      setIsLoading(true)
+      setIsDone(false)
 
-      const response = await fetch(getReleasesFileURL({ packageName }))
-
-      const releaseVersions = (await response.text())
-        .split('\n')
-        .filter(Boolean)
-
-      setReleaseVersions(releaseVersions)
-
-      setIsLoading(false)
-      setIsDone(true)
-
+      try {
+        const response = await fetch('upgrade-helper/RN_RELEASES.txt')
+        const releaseVersions = (await response.text())
+          .split('\n')
+          .filter(Boolean)
+        setReleaseVersions(releaseVersions)
+      } catch (error) {
+        console.error('error in fetching static file')
+      } finally {
+        setIsLoading(false)
+        setIsDone(true)
+      }
       return
     }
 
