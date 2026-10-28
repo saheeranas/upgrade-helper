@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "/upgrade-helper/:splat"
+  status = 200
