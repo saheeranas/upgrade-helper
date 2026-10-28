@@ -35,7 +35,7 @@ export const useFetchReleaseVersions = ({
       setIsDone(false)
 
       try {
-        const response = await fetch('upgrade-helper/RN_RELEASES.txt')
+        const response = await fetch('/RN_RELEASES.txt')
         const releaseVersions = (await response.text())
           .split('\n')
           .filter(Boolean)
