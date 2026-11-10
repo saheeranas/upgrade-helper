@@ -238,12 +238,12 @@ const Home = () => {
             <HeaderContainer>
               <TitleContainer>
                 <LogoImg
-                  alt="React Native Upgrade Helper logo"
-                  title="React Native Upgrade Helper logo"
+                  alt="RN Upgrade Helper logo"
+                  title="RN Upgrade Helper logo"
                   src={logo}
                 />
                 <a href={homepageUrl}>
-                  <TitleHeader>React Native Upgrade Helper</TitleHeader>
+                  <TitleHeader>RN Upgrade Helper</TitleHeader>
                 </a>
               </TitleContainer>
 
