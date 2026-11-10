@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://react-native-community.github.io/upgrade-helper">
+  <a href="https://react-native-upgrade-helper.netlify.app">
     Open the tool!
   </a>
 </p>
