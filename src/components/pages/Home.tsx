@@ -246,10 +246,10 @@ const Home = () => {
 
               <SettingsContainer>
                 <StarButton
-                  href="https://github.com/react-native-community/upgrade-helper"
+                  href="https://github.com/saheeranas/upgrade-helper"
                   data-icon="octicon-star"
                   data-show-count="true"
-                  aria-label="Star react-native-community/upgrade-helper on GitHub"
+                  aria-label="Star saheeranas/upgrade-helper on GitHub"
                   data-color-scheme={`no-preference: ${themeString}; light: ${themeString}; dark: ${themeString};`}
                 >
                   Star
